@@ -93,10 +93,8 @@ const HowItWorkTimeline = () => {
         },
     ];
     return (
-        <div className="min-h-screen w-full">
-            <div className="absolute top-0 left-0 w-full">
-                <Timeline data={data} />
-            </div>
+        <div className="w-full">
+            <Timeline data={data} />
         </div>
     )
 }
