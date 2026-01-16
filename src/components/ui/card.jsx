@@ -24,10 +24,10 @@ const cardVariants = cva("w-full relative", {
       ],
       neubrutalism: [
         "border-[0.5px]",
-        "border-zinc-400 dark:border-white/70",
+        "border-black dark:border-black",
         "relative",
         "shadow-[4px_4px_0px_0px_rgba(0,0,0)]",
-        "dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.7)]",
+        "dark:shadow-[3px_3px_0px_0px_rgba(0,0,0)]",
       ],
       inner: [
         "border-[0.5px] rounded-sm p-2",
