@@ -1,131 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 
 const SQRT_5000 = Math.sqrt(5000);
 
-const testimonials = [
+const baseTestimonials = [
   {
     tempId: 0,
-    testimonial: "My favorite solution in the market. We work 5x faster with COMPANY.",
-    by: "Alex, CEO at TechCorp",
-    imgSrc: "https://i.pravatar.cc/150?img=1"
+    testimonial: "Becoming who you aspire to be is a journey you'll be repeatedly tempted to abandon, DON'T DO IT.",
+    by: "David Meltzer, IEEE Speaker",
+    imgSrc: "/testimonial/david_m.jpg"
   },
   {
     tempId: 1,
-    testimonial: "I'm confident my data is safe with COMPANY. I can't say that about other providers.",
-    by: "Dan, CTO at SecureNet",
-    imgSrc: "https://i.pravatar.cc/150?img=2"
+    testimonial: "Our most valuable resources - creativity, communication, invention, and reinvention - are, in fact, unlimited.",
+    by: "David Grinspoon, IEEE Speaker",
+    imgSrc: "/testimonial/david.jpg"
   },
   {
     tempId: 2,
-    testimonial: "I know it's cliche, but we were lost before we found COMPANY. Can't thank you guys enough!",
-    by: "Stephanie, COO at InnovateCo",
-    imgSrc: "https://i.pravatar.cc/150?img=3"
-  },
-  {
-    tempId: 3,
-    testimonial: "COMPANY's products make planning for the future seamless. Can't recommend them enough!",
-    by: "Marie, CFO at FuturePlanning",
-    imgSrc: "https://i.pravatar.cc/150?img=4"
-  },
-  {
-    tempId: 4,
-    testimonial: "If I could give 11 stars, I'd give 12.",
-    by: "Andre, Head of Design at CreativeSolutions",
-    imgSrc: "https://i.pravatar.cc/150?img=5"
-  },
-  {
-    tempId: 5,
-    testimonial: "SO SO SO HAPPY WE FOUND YOU GUYS!!!! I'd bet you've saved me 100 hours so far.",
-    by: "Jeremy, Product Manager at TimeWise",
-    imgSrc: "https://i.pravatar.cc/150?img=6"
-  },
-  {
-    tempId: 6,
-    testimonial: "Took some convincing, but now that we're on COMPANY, we're never going back.",
-    by: "Pam, Marketing Director at BrandBuilders",
-    imgSrc: "https://i.pravatar.cc/150?img=7"
-  },
-  {
-    tempId: 7,
-    testimonial: "I would be lost without COMPANY's in-depth analytics. The ROI is EASILY 100X for us.",
-    by: "Daniel, Data Scientist at AnalyticsPro",
-    imgSrc: "https://i.pravatar.cc/150?img=8"
-  },
-  {
-    tempId: 8,
-    testimonial: "It's just the best. Period.",
-    by: "Fernando, UX Designer at UserFirst",
-    imgSrc: "https://i.pravatar.cc/150?img=9"
-  },
-  {
-    tempId: 9,
-    testimonial: "I switched 5 years ago and never looked back.",
-    by: "Andy, DevOps Engineer at CloudMasters",
-    imgSrc: "https://i.pravatar.cc/150?img=10"
-  },
-  {
-    tempId: 10,
-    testimonial: "I've been searching for a solution like COMPANY for YEARS. So glad I finally found one!",
-    by: "Pete, Sales Director at RevenueRockets",
-    imgSrc: "https://i.pravatar.cc/150?img=11"
-  },
-  {
-    tempId: 11,
-    testimonial: "It's so simple and intuitive, we got the team up to speed in 10 minutes.",
-    by: "Marina, HR Manager at TalentForge",
-    imgSrc: "https://i.pravatar.cc/150?img=12"
-  },
-  {
-    tempId: 12,
-    testimonial: "COMPANY's customer support is unparalleled. They're always there when we need them.",
-    by: "Olivia, Customer Success Manager at ClientCare",
-    imgSrc: "https://i.pravatar.cc/150?img=13"
-  },
-  {
-    tempId: 13,
-    testimonial: "The efficiency gains we've seen since implementing COMPANY are off the charts!",
-    by: "Raj, Operations Manager at StreamlineSolutions",
-    imgSrc: "https://i.pravatar.cc/150?img=14"
-  },
-  {
-    tempId: 14,
-    testimonial: "COMPANY has revolutionized how we handle our workflow. It's a game-changer!",
-    by: "Lila, Workflow Specialist at ProcessPro",
-    imgSrc: "https://i.pravatar.cc/150?img=15"
-  },
-  {
-    tempId: 15,
-    testimonial: "The scalability of COMPANY's solution is impressive. It grows with our business seamlessly.",
-    by: "Trevor, Scaling Officer at GrowthGurus",
-    imgSrc: "https://i.pravatar.cc/150?img=16"
-  },
-  {
-    tempId: 16,
-    testimonial: "I appreciate how COMPANY continually innovates. They're always one step ahead.",
-    by: "Naomi, Innovation Lead at FutureTech",
-    imgSrc: "https://i.pravatar.cc/150?img=17"
-  },
-  {
-    tempId: 17,
-    testimonial: "The ROI we've seen with COMPANY is incredible. It's paid for itself many times over.",
-    by: "Victor, Finance Analyst at ProfitPeak",
-    imgSrc: "https://i.pravatar.cc/150?img=18"
-  },
-  {
-    tempId: 18,
-    testimonial: "COMPANY's platform is so robust, yet easy to use. It's the perfect balance.",
-    by: "Yuki, Tech Lead at BalancedTech",
-    imgSrc: "https://i.pravatar.cc/150?img=19"
-  },
-  {
-    tempId: 19,
-    testimonial: "We've tried many solutions, but COMPANY stands out in terms of reliability and performance.",
-    by: "Zoe, Performance Manager at ReliableSystems",
-    imgSrc: "https://i.pravatar.cc/150?img=20"
+    testimonial: "You can have the wrong guy with the right instrument.",
+    by: "Peter Schultz, IEEE Speaker",
+    imgSrc: "/testimonial/peter.jpg"
   }
 ];
+
+// Create repeated testimonials for the stagger effect
+const createTestimonials = () => {
+  const repeated = [];
+  for (let i = 0; i < 20; i++) {
+    const base = baseTestimonials[i % baseTestimonials.length];
+    repeated.push({
+      ...base,
+      tempId: i,
+      themeIndex: i % 3
+    });
+  }
+  return repeated;
+};
+
+const testimonials = createTestimonials();
+
+// Theme colors: purple, pink, blue
+const getThemeColor = (themeIndex) => {
+  const themes = [
+    { bg: "bg-purple-500", border: "border-purple-500", text: "text-white", shadow: "rgb(168, 85, 247)" },
+    { bg: "bg-pink-500", border: "border-pink-500", text: "text-white", shadow: "rgb(236, 72, 153)" },
+    { bg: "bg-blue-500", border: "border-blue-500", text: "text-white", shadow: "rgb(59, 130, 246)" },
+  ];
+  return themes[themeIndex % 3];
+};
 
 const TestimonialCard = ({ 
   position, 
@@ -134,6 +58,7 @@ const TestimonialCard = ({
   cardSize 
 }) => {
   const isCenter = position === 0;
+  const themeColor = getThemeColor(testimonial.themeIndex || 0);
 
   return (
     <div
@@ -141,8 +66,8 @@ const TestimonialCard = ({
       className={cn(
         "absolute left-1/2 top-1/2 cursor-pointer border-2 p-8 transition-all duration-500 ease-in-out",
         isCenter 
-          ? "z-10 bg-primary text-primary-foreground border-primary" 
-          : "z-0 bg-card text-card-foreground border-border hover:border-primary/50"
+          ? `${themeColor.bg} ${themeColor.text} ${themeColor.border}` 
+          : "z-0 bg-white text-gray-900 border-gray-200 hover:border-gray-300"
       )}
       style={{
         width: cardSize,
@@ -154,10 +79,10 @@ const TestimonialCard = ({
           translateY(${isCenter ? -65 : position % 2 ? 15 : -15}px)
           rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)
         `,
-        boxShadow: isCenter ? "0px 8px 0px 4px hsl(var(--border))" : "0px 0px 0px 0px transparent"
+        boxShadow: isCenter ? `0px 8px 0px 4px ${themeColor.shadow}` : "0px 0px 0px 0px transparent"
       }}>
       <span
-        className="absolute block origin-top-right rotate-45 bg-border"
+        className="absolute block origin-top-right rotate-45 bg-gray-300"
         style={{
           right: -2,
           top: 48,
@@ -167,21 +92,21 @@ const TestimonialCard = ({
       <img
         src={testimonial.imgSrc}
         alt={`${testimonial.by.split(',')[0]}`}
-        className="mb-4 h-14 w-12 bg-muted object-cover object-top"
+        className="mb-4 h-14 w-12 bg-gray-200 object-cover object-top rounded"
         style={{
-          boxShadow: "3px 3px 0px hsl(var(--background))"
+          boxShadow: "3px 3px 0px white"
         }} />
       <h3
         className={cn(
           "text-base sm:text-xl font-medium",
-          isCenter ? "text-primary-foreground" : "text-foreground"
+          isCenter ? themeColor.text : "text-gray-900"
         )}>
         "{testimonial.testimonial}"
       </h3>
       <p
         className={cn(
           "absolute bottom-8 left-8 right-8 mt-2 text-sm italic",
-          isCenter ? "text-primary-foreground/80" : "text-muted-foreground"
+          isCenter ? "text-white/80" : "text-gray-600"
         )}>
         - {testimonial.by}
       </p>
@@ -223,9 +148,35 @@ export const StaggerTestimonials = () => {
   }, []);
 
   return (
-    <div
-      className="relative w-full overflow-hidden bg-muted/30"
-      style={{ height: 600 }}>
+    <div className="min-h-screen bg-white py-16 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-12">
+          <p className="text-purple-600 text-lg font-medium mb-2">Welcome to SCEECS'26</p>
+          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4">
+            Precious remarks by Past Speakers
+          </h1>
+          <div className="flex justify-center">
+            <svg
+              className="w-32 h-2 text-pink-400"
+              viewBox="0 0 128 4"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 2C18 1, 38 3, 54 2C70 1, 90 3, 106 2C114 1.5, 122 2, 126 2"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+        </div>
+
+        {/* Testimonials Section */}
+        <div
+          className="relative w-full overflow-hidden bg-gray-50"
+          style={{ height: 600 }}>
       {testimonialsList.map((testimonial, index) => {
         const position = testimonialsList.length % 2
           ? index - (testimonialsList.length + 1) / 2
@@ -244,8 +195,8 @@ export const StaggerTestimonials = () => {
           onClick={() => handleMove(-1)}
           className={cn(
             "flex h-14 w-14 items-center justify-center text-2xl transition-colors",
-            "bg-background border-2 border-border hover:bg-primary hover:text-primary-foreground",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            "bg-white border-2 border-gray-300 hover:bg-gray-800 hover:text-white hover:border-gray-800",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2"
           )}
           aria-label="Previous testimonial">
           <ChevronLeft />
@@ -254,13 +205,15 @@ export const StaggerTestimonials = () => {
           onClick={() => handleMove(1)}
           className={cn(
             "flex h-14 w-14 items-center justify-center text-2xl transition-colors",
-            "bg-background border-2 border-border hover:bg-primary hover:text-primary-foreground",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            "bg-white border-2 border-gray-300 hover:bg-gray-800 hover:text-white hover:border-gray-800",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2"
           )}
           aria-label="Next testimonial">
           <ChevronRight />
         </button>
       </div>
+      </div>
+    </div>
     </div>
   );
 };

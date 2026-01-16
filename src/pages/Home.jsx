@@ -1,6 +1,7 @@
 import HowItWorkTimeline from "../components/Home/Timeline";
 import TracksAndTopics from "../components/Home/TracksAndTopics";
 import Gallery from "../components/Home/Gallery";
+import { StaggerTestimonials } from "../components/stagger-testimonials";
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <HowItWorkTimeline/>
       <TracksAndTopics/>
       <Gallery/>
+      <StaggerTestimonials/>
     </div>
   );
 }
