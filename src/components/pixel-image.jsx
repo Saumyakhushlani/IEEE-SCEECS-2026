@@ -16,7 +16,9 @@ export const PixelImage = ({
   pixelFadeInDuration = 2000,
   maxAnimationDelay = 2400,
   colorRevealDelay = 2600,
-  customGrid
+  customGrid,
+  className,
+  startAnimation = true
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [showColor, setShowColor] = useState(false);
@@ -39,12 +41,14 @@ export const PixelImage = ({
   }, [customGrid, grid]);
 
   useEffect(() => {
-    setIsVisible(true);
-    const colorTimeout = setTimeout(() => {
-      setShowColor(true);
-    }, colorRevealDelay);
-    return () => clearTimeout(colorTimeout);
-  }, [colorRevealDelay]);
+    if (startAnimation) {
+      setIsVisible(true);
+      const colorTimeout = setTimeout(() => {
+        setShowColor(true);
+      }, colorRevealDelay);
+      return () => clearTimeout(colorTimeout);
+    }
+  }, [colorRevealDelay, startAnimation]);
 
   const pieces = useMemo(() => {
     const total = rows * cols;
@@ -68,12 +72,12 @@ export const PixelImage = ({
   }, [rows, cols, maxAnimationDelay]);
 
   return (
-    <div className="relative h-56 w-56 select-none md:h-64 md:w-64">
+    <div className={cn("relative w-full h-full select-none rounded-xl overflow-hidden", className)}>
       {pieces.map((piece, index) => (
         <div
           key={index}
           className={cn(
-            "absolute inset-0 transition-all ease-out",
+            "absolute inset-0 transition-all ease-out rounded-xl overflow-hidden",
             isVisible ? "opacity-100" : "opacity-0"
           )}
           style={{
@@ -85,7 +89,7 @@ export const PixelImage = ({
             src={src}
             alt={`Pixel image piece ${index + 1}`}
             className={cn(
-              "z-1 object-cover rounded-[2.5rem]",
+              "z-1 object-cover w-full h-full rounded-xl",
               grayscaleAnimation && (showColor ? "grayscale-0" : "grayscale")
             )}
             style={{
