@@ -7,11 +7,13 @@ import { StaggerTestimonials } from "../components/stagger-testimonials";
 import VideoShowcase from "../components/Home/VideoShowcase";
 import RegistrationFeeTable from "../components/Home/RegistrationFeeTable";
 import GuestLectures from "../components/Home/GuestLectures";
+import About from "../components/Home/About";
 
 function Home() {
   return (
     <div>
       <VideoShowcase/>
+      <About/>
       <HowItWorkTimeline/>
       <TracksAndTopics/>
       <Gallery/>

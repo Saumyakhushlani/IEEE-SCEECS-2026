@@ -27,6 +27,14 @@ function Header() {
             </li>
             <li>
               <Link 
+                to="/callforpaper" 
+                className="text-gray-700 hover:text-indigo-600 font-medium transition-colors duration-200"
+              >
+                Call for Paper
+              </Link>
+            </li>
+            <li>
+              <Link 
                 to="/contact" 
                 className="text-gray-700 hover:text-indigo-600 font-medium transition-colors duration-200"
               >

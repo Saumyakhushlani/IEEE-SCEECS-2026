@@ -103,7 +103,7 @@ function Contact() {
 
           {/* Middle Card - IEEE - MSB */}
           <div className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow">
-            <h2 className="text-purple-600 text-2xl font-semibold mb-6">IEEE - MSB</h2>
+            <h2 className="text-pink-600 text-2xl font-semibold mb-6">IEEE - MSB</h2>
             <p className="text-gray-700 text-base leading-relaxed">
               c/o Dr. Dheeraj Kumar Agarwal, Branch Counsellor Professor, Department of Electronics and Communication Engineering.
             </p>
@@ -111,7 +111,7 @@ function Contact() {
 
           {/* Right Card - Email Us */}
           <div className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow">
-            <h2 className="text-purple-600 text-2xl font-semibold mb-6">Email Us</h2>
+            <h2 className="text-blue-600 text-2xl font-semibold mb-6">Email Us</h2>
             <p className="text-gray-700 text-base leading-relaxed">
               We reply to Emails within 1-2 working days
             </p>
@@ -146,11 +146,15 @@ function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mt-12 justify-items-center">
             {teamMembers.map((member, index) => (
               <div key={index} className="flex flex-col items-center px-6">
-                <div className="mb-6">
+                <div className="mb-6 w-64 h-64 md:w-72 md:h-72">
                   <PixelImage
                     src={member.image}
                     grid="6x4"
                     grayscaleAnimation={true}
+                    pixelFadeInDuration={2000}
+                    maxAnimationDelay={2400}
+                    colorRevealDelay={2600}
+                    className="w-full h-full"
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 text-center mb-2">
