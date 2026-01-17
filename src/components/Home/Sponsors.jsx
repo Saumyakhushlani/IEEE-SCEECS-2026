@@ -35,7 +35,7 @@ const secondHalf = sponsorLogos.slice(Math.ceil(sponsorLogos.length / 2));
 
 function Sponsors() {
   return (
-    <div className="min-h-screen bg-white py-16 px-4 md:px-8">
+    <div className=" bg-white py-16 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-12 text-center">
@@ -45,12 +45,12 @@ function Sponsors() {
         </div>
 
         {/* Logo Carousels - Top and Bottom */}
-        <div className="mt-12 flex flex-col gap-8 md:gap-12 justify-center items-center">
-          <div className="w-full flex justify-center">
-            <LogoCarousel logos={firstHalf} columnCount={4} />
+        <div className="mt-12 flex flex-col gap-8 md:gap-12 justify-center items-center overflow-hidden">
+          <div className="w-full flex justify-center overflow-hidden px-2">
+            <LogoCarousel logos={firstHalf} columnCount={4} mobileColumnCount={2} />
           </div>
-          <div className="w-full flex justify-center">
-            <LogoCarousel logos={secondHalf} columnCount={4} />
+          <div className="w-full flex justify-center overflow-hidden px-2">
+            <LogoCarousel logos={secondHalf} columnCount={4} mobileColumnCount={2} />
           </div>
         </div>
       </div>

@@ -37,7 +37,7 @@ const LogoColumn = React.memo(({ logos, index, currentTime }) => {
 
   return (
     <motion.div
-      className="relative h-28 w-40 overflow-hidden md:h-40 md:w-72"
+      className="relative h-32 w-36 overflow-hidden sm:h-36 sm:w-40 md:h-40 md:w-72 flex-shrink-0"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -74,7 +74,7 @@ const LogoColumn = React.memo(({ logos, index, currentTime }) => {
             },
           }}>
           <CurrentLogo
-            className="h-40 w-40 max-h-[90%] max-w-[90%] object-contain md:h-52 md:w-52" />
+            className="h-32 w-32 max-h-[90%] max-w-[90%] object-contain sm:h-36 sm:w-36 md:h-52 md:w-52" />
         </motion.div>
       </AnimatePresence>
     </motion.div>
@@ -83,9 +83,11 @@ const LogoColumn = React.memo(({ logos, index, currentTime }) => {
 
 export function LogoCarousel({
   columnCount = 2,
-  logos
+  logos,
+  mobileColumnCount = 2
 }) {
   const [logoSets, setLogoSets] = useState([])
+  const [mobileLogoSets, setMobileLogoSets] = useState([])
   const [currentTime, setCurrentTime] = useState(0)
 
   const updateTime = useCallback(() => {
@@ -100,14 +102,28 @@ export function LogoCarousel({
   useEffect(() => {
     const distributedLogos = distributeLogos(logos, columnCount)
     setLogoSets(distributedLogos)
-  }, [logos, columnCount])
+    
+    // For mobile, use fewer columns
+    const mobileDistributedLogos = distributeLogos(logos, mobileColumnCount)
+    setMobileLogoSets(mobileDistributedLogos)
+  }, [logos, columnCount, mobileColumnCount])
 
   return (
-    <div className="flex space-x-4">
-      {logoSets.map((logos, index) => (
-        <LogoColumn key={index} logos={logos} index={index} currentTime={currentTime} />
-      ))}
-    </div>
+    <>
+      {/* Mobile: Animated Carousel with 2 columns */}
+      <div className="flex md:hidden space-x-2 justify-center max-w-full overflow-hidden px-2">
+        {mobileLogoSets.map((logos, index) => (
+          <LogoColumn key={index} logos={logos} index={index} currentTime={currentTime} />
+        ))}
+      </div>
+      
+      {/* Desktop: Animated Carousel */}
+      <div className="hidden md:flex space-x-2 md:space-x-4 flex-wrap justify-center max-w-full">
+        {logoSets.map((logos, index) => (
+          <LogoColumn key={index} logos={logos} index={index} currentTime={currentTime} />
+        ))}
+      </div>
+    </>
   );
 }
 
