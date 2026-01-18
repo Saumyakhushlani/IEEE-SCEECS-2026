@@ -6,6 +6,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import CallForPaper from './pages/CallForPaper'
 import GuestLecturers from './pages/GuestLecturers'
+import Gallery from './pages/Gallery'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/callforpaper" element={<CallForPaper />} />
           <Route path="/guestlecturers" element={<GuestLecturers />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </div>
       <Footer />
