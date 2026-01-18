@@ -1,4 +1,5 @@
 import { FeatureSteps } from '../feature-section';
+import { Link } from 'react-router-dom';
 
 const speakers = [
   {
@@ -59,9 +60,12 @@ function GuestLectures() {
 
         {/* Know our Speakers Button */}
         <div className="text-center mb-12">
-          <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-lg">
+          <Link 
+            to="/guestlecturers"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-lg"
+          >
             Know our Speakers
-          </button>
+          </Link>
         </div>
 
         {/* Speakers Section using FeatureSteps */}

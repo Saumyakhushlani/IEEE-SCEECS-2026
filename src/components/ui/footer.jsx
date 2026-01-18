@@ -59,7 +59,7 @@ export function Footer() {
                 {column.links.map((link) => (
                   <li
                     key={link.id}
-                    className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm text-gray-600 hover:text-purple-600 transition-colors"
+                    className="group inline-flex cursor-pointer items-center justify-start gap-1 text-sm text-gray-600 hover:text-blue-900 transition-colors"
                   >
                     {link.url.startsWith('http') ? (
                       <a 
