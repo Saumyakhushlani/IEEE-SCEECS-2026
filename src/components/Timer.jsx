@@ -37,7 +37,7 @@ const EventTimerSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-[#090822] -mt-20 sm:-mt-32 md:-mt-40">
+    <section className="py-16 bg-white mt-15 sm:mt-20 md:mt-30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
           <div className="flex flex-col lg:flex-row">

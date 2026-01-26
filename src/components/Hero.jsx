@@ -3,13 +3,13 @@ import React from 'react'
 const Hero = ({ src, alt = "Hero Image", content, dates, buttonContent }) => {
     return (
         <div className='w-full bg-white relative'>
-            <div className='relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] xl:h-[80vh] overflow-hidden'>
+            <div className='relative w-full h-[40vh] sm:h-[50vh] md:h-[70vh] lg:h-[80vh] xl:h-[90vh] overflow-hidden'>
                 <img
                     src={src}
                     alt={alt}
                     className='w-full h-full object-cover'
                 />
-                <div className='absolute inset-0 w-full h-full bg-[#090822E6] z-10'></div>
+                <div className='absolute inset-0 w-full h-full bg-[#090822c8] z-10'></div>
                 {content && (
                     <div className='absolute inset-0 top-40 left-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 z-30'>
                         <div className='text-white max-w-2xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold'>

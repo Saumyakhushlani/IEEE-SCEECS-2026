@@ -4,6 +4,8 @@ import HeroVideo from '../components/hero-video';
 import SponsorsSection from '../components/Home/SponsorsSection';
 import { Presentation, Users, FileText, Laptop } from 'lucide-react';
 import Hero from '@/components/Hero';
+import ManitAbout from '../components/Home/ManitAbout';
+import IEEEManitBranch from '../components/Home/IEEEManitBranch';
 
 
 const features = [
@@ -115,6 +117,12 @@ function About() {
         videoSrc="/video/recap-2025.mp4"
         showHeader={false}
       />
+
+      {/* MANIT About Section */}
+      <ManitAbout />
+
+      {/* IEEE MANIT Student Branch Section */}
+      <IEEEManitBranch />
 
       {/* Team and Gallery Section */}
       <div className="py-16 px-4 md:px-8 bg-white">

@@ -10,6 +10,7 @@ import GuestLectures from "../components/Home/GuestLectures";
 import About from "../components/Home/About";
 import Hero from "@/components/Hero";
 import EventTimerSection from "@/components/Timer";
+import ScheduleSection from "../components/Home/ScheduleSection";
 
 
 function Home() {
@@ -20,7 +21,7 @@ function Home() {
   return (
     <div>
       <Hero src="/background/conference.jpg" content="IEEE SCEECS 2026" dates="31st Jan - 1st Feb 2026, Bhopal, India." buttonContent={button}/>
-      {/* <EventTimerSection/> */}
+      <EventTimerSection/>
       <VideoShowcase/>
       <About/>
       <HowItWorkTimeline/>
@@ -30,6 +31,7 @@ function Home() {
       <GuestLectures/>
       <Sponsors/>
       <RegistrationFeeTable/>
+      <ScheduleSection/>
       <StaggerTestimonials/>
     </div>
   );
