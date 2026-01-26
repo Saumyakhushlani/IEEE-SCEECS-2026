@@ -67,11 +67,12 @@ const TestimonialCard = ({
         "absolute left-1/2 top-1/2 cursor-pointer border-2 p-8 transition-all duration-500 ease-in-out",
         isCenter 
           ? `${themeColor.bg} ${themeColor.text} ${themeColor.border}` 
-          : "z-0 bg-white text-gray-900 border-gray-200 hover:border-gray-300"
+          : "bg-white text-gray-900 border-gray-200 hover:border-gray-300"
       )}
       style={{
         width: cardSize,
         height: cardSize,
+        zIndex: isCenter ? 50 : Math.max(10 - Math.abs(position), 1),
         clipPath: `polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)`,
         transform: `
           translate(-50%, -50%) 
