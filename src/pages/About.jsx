@@ -56,15 +56,15 @@ function About() {
         <div className="max-w-7xl mx-auto">
           {/* Title Section */}
           <div className="text-center mb-8 md:mb-12">
-            <p className="text-purple-600 text-sm md:text-lg font-medium uppercase tracking-wide mb-4">
+            <p className="text-purple-600 text-xs sm:text-sm md:text-base lg:text-lg font-medium uppercase tracking-wide mb-3 sm:mb-4">
               ABOUT SCEECS
             </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-4 sm:mb-6">
               SCEECS 2026
             </h1>
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-6 sm:mb-8">
               <svg
-                className="w-32 h-2 text-pink-400"
+                className="w-24 sm:w-32 h-2 text-pink-400"
                 viewBox="0 0 128 4"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ function About() {
                 />
               </svg>
             </div>
-            <p className="text-gray-700 text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
+            <p className="text-gray-700 text-sm sm:text-base md:text-lg max-w-4xl mx-auto leading-relaxed px-4">
               IEEE International Students' Conference on Electrical, Electronics and Computer Sciences (SCEECS) is flagship conference of IEEE-MSB featuring comprehensive technical programs including paper presentations, workshops and expert guest lectures.
             </p>
           </div>
@@ -97,12 +97,12 @@ function About() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-3 sm:mb-4">
                     {feature.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-700 text-center leading-relaxed">
+                  <p className="text-gray-700 text-sm sm:text-base text-center leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
