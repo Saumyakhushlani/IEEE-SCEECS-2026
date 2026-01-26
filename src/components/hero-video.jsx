@@ -154,8 +154,8 @@ function HeroVideo({ videoSrc, title, subtitle, description, className, showHead
   const clipPath = useMotionTemplate`inset(${insetY}% ${insetX}% ${insetY}% ${insetX}% round ${roundedness}px)`
 
   return (
-    <div ref={containerRef} className={cn("relative h-[300vh] md:h-[250vh] bg-white", className)}>
-      <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center px-4 md:px-8 py-0">
+    <div ref={containerRef} className={cn("relative h-[200vh] md:h-[250vh] bg-white", className)}>
+      <div className="sticky top-0  overflow-hidden flex items-center justify-center px-4 md:px-8 py-0">
         {showHeader && (
           <ContainerStagger className="absolute top-0 left-0 right-0 text-center z-10">
             <ContainerAnimated animation="bottom" className="mb-4">

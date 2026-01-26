@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
+import ScrollNavigationMenu from './components/scroll-navigation-menu'
 import { Footer } from './components/ui/footer'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -11,7 +11,7 @@ import Gallery from './pages/Gallery'
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <ScrollNavigationMenu />
       <div className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
