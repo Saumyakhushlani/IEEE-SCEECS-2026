@@ -13,7 +13,7 @@ const heroImages = [
 
 function VideoShowcase() {
   return (
-    <div className="relative w-full bg-white">
+    <div className="relative w-full bg-white mt-40">
       {/* Zoom Parallax with hero images and video in the middle */}
       <ZoomParallax images={heroImages} />
     </div>
