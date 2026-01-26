@@ -1,4 +1,5 @@
 import { PixelImage } from '../components/pixel-image';
+import Hero from '@/components/Hero';
 
 const teamMembers = [
   {
@@ -29,7 +30,10 @@ const teamMembers = [
 
 function Contact() {
   return (
-    <div className="min-h-screen bg-white py-12 px-4">
+    <>
+      <Hero src="/background/11.jpg" content="Contact" />
+      
+      <div className="min-h-screen bg-white py-12 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header Section */}
         <div className="text-center mb-12">
@@ -38,16 +42,16 @@ function Contact() {
             IEEE SCEECS 2026
           </h1>
           <div className="flex justify-center">
-            <svg 
-              className="w-32 h-2 text-pink-400" 
-              viewBox="0 0 128 4" 
-              fill="none" 
+            <svg
+              className="w-32 h-2 text-pink-400"
+              viewBox="0 0 128 4"
+              fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path 
-                d="M2 2C18 1, 38 3, 54 2C70 1, 90 3, 106 2C114 1.5, 122 2, 126 2" 
-                stroke="currentColor" 
-                strokeWidth="2" 
+              <path
+                d="M2 2C18 1, 38 3, 54 2C70 1, 90 3, 106 2C114 1.5, 122 2, 126 2"
+                stroke="currentColor"
+                strokeWidth="2"
                 strokeLinecap="round"
               />
             </svg>
@@ -61,39 +65,39 @@ function Contact() {
             <h2 className="text-purple-600 text-2xl font-semibold mb-6">Contact Information</h2>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <svg 
-                  className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
                   />
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
                 <span className="text-gray-700 text-base">Bhopal, MP</span>
               </div>
               <div className="flex items-start gap-3">
-                <svg 
-                  className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0" 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className="w-5 h-5 text-gray-500 mt-1 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
                 <span className="text-gray-700 text-base">ieeemanitstudentbranch@gmail.com</span>
@@ -126,16 +130,16 @@ function Contact() {
               Contact Team
             </h2>
             <div className="flex justify-center">
-              <svg 
-                className="w-32 h-2 text-pink-400" 
-                viewBox="0 0 128 4" 
-                fill="none" 
+              <svg
+                className="w-32 h-2 text-pink-400"
+                viewBox="0 0 128 4"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path 
-                  d="M2 2C18 1, 38 3, 54 2C70 1, 90 3, 106 2C114 1.5, 122 2, 126 2" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
+                <path
+                  d="M2 2C18 1, 38 3, 54 2C70 1, 90 3, 106 2C114 1.5, 122 2, 126 2"
+                  stroke="currentColor"
+                  strokeWidth="2"
                   strokeLinecap="round"
                 />
               </svg>
@@ -187,7 +191,8 @@ function Contact() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
+    </>
   );
 }
 

@@ -126,11 +126,11 @@ function ScrollNavigationMenu({
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <motion.div
-              className="flex-shrink-0"
+              className="flex-shrink-0 w-22 h-14"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}>
               <Link to="/" className="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition-colors">
-                SCEECS 2026
+                <img src="/logo2026_dark.png" alt="log" className="w-full h-full object-cover" />
               </Link>
             </motion.div>
 

@@ -7,6 +7,7 @@ import Contact from './pages/Contact'
 import CallForPaper from './pages/CallForPaper'
 import GuestLecturers from './pages/GuestLecturers'
 import Gallery from './pages/Gallery'
+import Test from './pages/Test'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/callforpaper" element={<CallForPaper />} />
           <Route path="/guestlecturers" element={<GuestLecturers />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </div>
       <Footer />

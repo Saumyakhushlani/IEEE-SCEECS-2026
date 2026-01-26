@@ -46,16 +46,8 @@ function Team() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16 mt-12 justify-items-center">
         {teamMembers.map((member, index) => (
           <div key={index} className="flex flex-col items-center px-6">
-            <div className="mb-6 w-64 h-64 md:w-72 md:h-72 overflow-hidden">
-              <PixelImage
-                src={member.image}
-                grid="6x4"
-                grayscaleAnimation={true}
-                pixelFadeInDuration={2000}
-                maxAnimationDelay={2400}
-                colorRevealDelay={2600}
-                className="w-full h-full"
-              />
+            <div className="mb-6 w-72 h-72 md:w-84 md:h-84 rounded-xl overflow-hidden">
+              <img src={member.image}  alt="Image" className='h-full w-full object-cover' />
             </div>
             <h3 className="text-xl md:text-2xl font-semibold text-gray-900 text-center mb-2">
               {member.name}

@@ -3,6 +3,8 @@ import Team from '../components/Home/Team';
 import HeroVideo from '../components/hero-video';
 import SponsorsSection from '../components/Home/SponsorsSection';
 import { Presentation, Users, FileText, Laptop } from 'lucide-react';
+import Hero from '@/components/Hero';
+
 
 const features = [
   {
@@ -45,7 +47,8 @@ const features = [
 
 function About() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white mt-8">
+      <Hero src="/background/10.jpg" content="About Us"/>
       {/* Header Section */}
       <div className="py-16 px-4 md:px-8 bg-white">
         <div className="max-w-7xl mx-auto">

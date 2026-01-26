@@ -143,21 +143,31 @@ function HeroVideo({ videoSrc, title, subtitle, description, className, showHead
   const containerRef = React.useRef(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start center", "end start"]
   })
 
-  // Video expands when going out of view - starts at 50% scroll
-  const adjustedProgress = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0, 1])
-  const insetY = useTransform(adjustedProgress, [0, 1], [35, 0])
-  const insetX = useTransform(adjustedProgress, [0, 1], [42, 0])
+  // Video expands when going out of view
+  // Animation starts immediately and completes at 100% scroll
+  // Use the scroll progress directly for smooth animation
+  const adjustedProgress = useTransform(scrollYProgress, [0, 1], [0, 1])
+  
+  // Responsive inset values - more dramatic change for better visibility
+  // Start with significant inset (smaller video) and expand to full size
+  // More dramatic on mobile for better visibility
+  const insetY = useTransform(adjustedProgress, [0, 1], [30, 0])
+  const insetX = useTransform(adjustedProgress, [0, 1], [40, 0])
   const roundedness = useTransform(adjustedProgress, [0, 1], [1000, 16])
+  
+  // Add scale transform for additional visual effect
+  const scale = useTransform(adjustedProgress, [0, 1], [0.85, 1])
+  
   const clipPath = useMotionTemplate`inset(${insetY}% ${insetX}% ${insetY}% ${insetX}% round ${roundedness}px)`
 
   return (
-    <div ref={containerRef} className={cn("relative h-[200vh] md:h-[250vh] bg-white", className)}>
-      <div className="sticky top-0  overflow-hidden flex items-center justify-center px-4 md:px-8 py-0">
+    <div ref={containerRef} className={cn("relative h-[300vh] md:h-[250vh] bg-white", className)}>
+      <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center px-4 md:px-8 py-0">
         {showHeader && (
-          <ContainerStagger className="absolute top-0 left-0 right-0 text-center z-10">
+          <ContainerStagger className="absolute top-0 left-0 right-0 text-center z-10 pt-8 md:pt-12">
             <ContainerAnimated animation="bottom" className="mb-4">
               <p className="text-purple-600 text-sm md:text-lg font-medium uppercase tracking-wide">
                 {subtitle || "ABOUT SCEECS"}
@@ -196,8 +206,8 @@ function HeroVideo({ videoSrc, title, subtitle, description, className, showHead
         )}
 
         <motion.div
-          style={{ clipPath }}
-          className="w-full max-w-5xl mx-auto"
+          style={{ clipPath, scale }}
+          className="w-full max-w-4xl md:max-w-5xl mx-auto"
         >
           <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
             <video

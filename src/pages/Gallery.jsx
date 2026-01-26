@@ -1,5 +1,7 @@
 import { PixelImage } from '../components/pixel-image';
 import { useEffect, useRef, useState } from 'react';
+import Hero from '@/components/Hero';
+
 
 // Guest Lecturers Images
 const guestImages = [
@@ -100,9 +102,9 @@ const GallerySection = ({ images }) => {
               src={image.src}
               grid="6x4"
               grayscaleAnimation={true}
-              pixelFadeInDuration={2000}
-              maxAnimationDelay={2400}
-              colorRevealDelay={2600}
+              pixelFadeInDuration={1000}
+              maxAnimationDelay={1600}
+              colorRevealDelay={1800}
               className="w-full h-full group-hover:scale-110 transition-transform duration-300"
               startAnimation={visibleImages.has(index)}
             />
@@ -113,7 +115,7 @@ const GallerySection = ({ images }) => {
   );
 };
 
-const allImages = [...guestImages, ...conferenceImages, ...workshopImages, ...teamImages];
+const allImages = [...conferenceImages, ...workshopImages, ...teamImages, ...guestImages,];
 
 const tabs = [
   { id: 'all', label: 'All', images: allImages },
@@ -128,52 +130,55 @@ function Gallery() {
   const activeTabData = tabs.find(tab => tab.id === activeTab);
 
   return (
-    <div className="min-h-screen bg-white py-16 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <p className="text-purple-600 text-lg font-medium mb-2">Memories</p>
-          <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4">
-            Gallery
-          </h1>
-          <div className="flex justify-center mb-8">
-            <svg
-              className="w-32 h-2 text-pink-400"
-              viewBox="0 0 128 4"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2 2C18 1, 38 3, 54 2C70 1, 90 3, 106 2C114 1.5, 122 2, 126 2"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
+    <>
+      <Hero src="/background/7.jpg" content="Gallery"/>
+      <div className="min-h-screen bg-white py-16 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-12">
+            <p className="text-purple-600 text-lg font-medium mb-2">Memories</p>
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-4">
+              Gallery
+            </h1>
+            <div className="flex justify-center mb-8">
+              <svg
+                className="w-32 h-2 text-pink-400"
+                viewBox="0 0 128 4"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2 2C18 1, 38 3, 54 2C70 1, 90 3, 106 2C114 1.5, 122 2, 126 2"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
 
-        {/* Tabs Section */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12 border-b border-gray-200 pb-4">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-3 font-semibold text-base md:text-lg rounded-lg transition-all duration-200 ${
-                activeTab === tab.id
-                  ? 'bg-purple-600 text-white shadow-lg'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
+          {/* Tabs Section */}
+          <div className="flex flex-wrap justify-center gap-4 mb-12 border-b border-gray-200 pb-4">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-6 py-3 font-semibold text-base md:text-lg rounded-lg transition-all duration-200 ${activeTab === tab.id
+                    ? 'bg-purple-600 text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
 
-        {/* Gallery Grid */}
-        {activeTabData && <GallerySection images={activeTabData.images} />}
+          {/* Gallery Grid */}
+          {activeTabData && <GallerySection images={activeTabData.images} />}
+        </div>
       </div>
-    </div>
+    </>
+
   );
 }
 

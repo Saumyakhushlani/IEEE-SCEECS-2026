@@ -108,8 +108,8 @@ function Gallery() {
                   src={image.src}
                   grid="6x4"
                   grayscaleAnimation={true}
-                  pixelFadeInDuration={2000}
-                  maxAnimationDelay={2400}
+                  pixelFadeInDuration={1000}
+                  maxAnimationDelay={1800}
                   colorRevealDelay={2600}
                   className="w-full h-full"
                   startAnimation={visibleImages.has(index)}

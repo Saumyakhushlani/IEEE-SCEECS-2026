@@ -88,8 +88,8 @@ function Testimonials() {
                       className={cn(
                         "relative rounded-2xl p-6 md:p-8 transition-all duration-500 mx-auto",
                         isActive 
-                          ? `${themeColor.bg} ${themeColor.text} shadow-2xl` 
-                          : "bg-white text-gray-900 border-2 border-gray-200 shadow-lg"
+                          ? `${themeColor.bg} ${themeColor.text} shadow-2xl z-50` 
+                          : "bg-white text-gray-900 border-2 border-gray-200 shadow-lg z-10"
                       )}
                       style={{
                         minHeight: "280px",
