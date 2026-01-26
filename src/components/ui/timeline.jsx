@@ -32,7 +32,7 @@ export const Timeline = ({
         <div className="text-center mb-0">
           <h2 className="text-lg md:text-2xl font-semibold text-purple-600 mb-2">
             SCEECS'26 Call For Paper
-          </h2>
+        </h2>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             How it Works
           </h1>
@@ -50,8 +50,8 @@ export const Timeline = ({
               </div>
               <div className="hidden md:block md:pl-20">
                 <h3 className="text-xl md:text-3xl font-bold text-gray-900 mb-1">
-                  {item.title}
-                </h3>
+                {item.title}
+              </h3>
                 {item.date && (
                   <p className="text-pink-500 text-sm md:text-base font-medium">
                     {item.date}
@@ -63,8 +63,8 @@ export const Timeline = ({
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
               <div className="md:hidden block mb-4">
                 <h3 className="text-2xl text-left font-bold text-gray-900 mb-1">
-                  {item.title}
-                </h3>
+                {item.title}
+              </h3>
                 {item.date && (
                   <p className="text-pink-500 text-sm font-medium">
                     {item.date}

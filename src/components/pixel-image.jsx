@@ -42,11 +42,11 @@ export const PixelImage = ({
 
   useEffect(() => {
     if (startAnimation) {
-      setIsVisible(true);
-      const colorTimeout = setTimeout(() => {
-        setShowColor(true);
-      }, colorRevealDelay);
-      return () => clearTimeout(colorTimeout);
+    setIsVisible(true);
+    const colorTimeout = setTimeout(() => {
+      setShowColor(true);
+    }, colorRevealDelay);
+    return () => clearTimeout(colorTimeout);
     }
   }, [colorRevealDelay, startAnimation]);
 

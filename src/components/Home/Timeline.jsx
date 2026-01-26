@@ -48,7 +48,7 @@ const HowItWorkTimeline = () => {
                     <p className="text-gray-700 text-sm md:text-base leading-relaxed">
                         Authors of accepted papers will receive formal notification via email along with detailed instructions for preparing the camera-ready version. The notification will include reviewer comments, required revisions, and important deadlines for camera-ready submission and registration. Please ensure your contact email is up-to-date in the submission system.
                     </p>
-                </div>
+                        </div>
             ),
         },
         {
@@ -62,7 +62,7 @@ const HowItWorkTimeline = () => {
                     <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-3">
                         Authors of accepted papers must submit the final camera-ready version incorporating all reviewer comments and following the IEEE conference template guidelines. The camera-ready submission must include all required forms, copyright transfer agreement, and proofreading. Simultaneously, at least one author from each accepted paper must register for the conference to ensure paper inclusion in the proceedings.
                     </p>
-                </div>
+                        </div>
             ),
         },
         {
@@ -77,7 +77,7 @@ const HowItWorkTimeline = () => {
                         The conference will be conducted in hybrid mode, allowing authors to present their research either in-person at the conference venue or remotely via virtual platforms. Each presentation will be allocated a specific time slot within technical sessions, followed by a Q&A session where authors can interact with the audience and receive feedback.
                     </p>
                     
-                </div>
+                        </div>
             ),
         },
         {
@@ -94,7 +94,7 @@ const HowItWorkTimeline = () => {
     ];
     return (
         <div className="w-full">
-            <Timeline data={data} />
+                <Timeline data={data} />
         </div>
     )
 }
