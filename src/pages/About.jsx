@@ -1,27 +1,5 @@
-import { PixelImage } from '../components/pixel-image';
-
-const teamMembers = [
-  {
-    name: "Mr. Vedant Jaiswal",
-    role: "Organizing Co-chair",
-    image: "/contactTeam/vedant.jpg"
-  },
-  {
-    name: "Ms Yashika Lawani",
-    role: "Publication Co-chair",
-    image: "/contactTeam/Yashika.jpg"
-  },
-  {
-    name: "Ms. Priyanshi Khandelwal",
-    role: "Program Co-chair",
-    image: "/contactTeam/priyanshi_khandelwal.jpg"
-  },
-  {
-    name: "Mr. Vivek Kumar",
-    role: "Finance Co-chair",
-    image: "/contactTeam/vvk.jpg"
-  }
-];
+import Gallery from '../components/Home/Gallery';
+import Team from '../components/Home/Team';
 
 function About() {
   return (
@@ -47,36 +25,12 @@ function About() {
           </div>
         </div>
 
-        {/* Support Team Section */}
-        <div className="mt-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">
-            Support Team
-          </h2>
+        {/* Team Members Section */}
+        <Team />
 
-          {/* Team Members Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mt-12 justify-items-center">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="flex flex-col items-center px-6">
-                <div className="mb-6 w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden">
-                  <PixelImage
-                    src={member.image}
-                    grid="6x4"
-                    grayscaleAnimation={true}
-                    pixelFadeInDuration={2000}
-                    maxAnimationDelay={2400}
-                    colorRevealDelay={2600}
-                    className="w-full h-full"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 text-center mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-pink-500 text-center font-medium mb-4">
-                  {member.role}
-                </p>
-              </div>
-            ))}
-          </div>
+        {/* Gallery Section */}
+        <div className="mt-24">
+          <Gallery />
         </div>
       </div>
     </div>

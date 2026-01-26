@@ -8,16 +8,18 @@ const footerLinks = [
       { id: 1, title: "Home", url: "/" },
       { id: 2, title: "About", url: "/about" },
       { id: 3, title: "Call for Paper", url: "/callforpaper" },
-      { id: 4, title: "Contact", url: "/contact" },
+      { id: 4, title: "Guest Lecturers", url: "/guestlecturers" },
+      { id: 5, title: "Gallery", url: "/gallery" },
+      { id: 6, title: "Contact", url: "/contact" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { id: 5, title: "IEEE Xplore", url: "https://ieeexplore.ieee.org" },
-      { id: 6, title: "IEEE Website", url: "https://www.ieee.org" },
-      { id: 7, title: "IEEE MSB", url: "#" },
-      { id: 8, title: "Registration", url: "#" },
+      { id: 7, title: "IEEE Xplore", url: "https://ieeexplore.ieee.org" },
+      { id: 8, title: "IEEE Website", url: "https://www.ieee.org" },
+      { id: 9, title: "IEEE MSB", url: "#" },
+      { id: 10, title: "Registration", url: "#" },
     ],
   },
 ];
