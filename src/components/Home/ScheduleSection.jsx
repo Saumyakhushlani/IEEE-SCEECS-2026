@@ -4,12 +4,12 @@ const ScheduleSection = () => {
   const schedules = [
     {
       mode: "SCEECS'26 Virtual Schedule",
-      link: "/pdf/SCEECS'26 Online List.pdf",
+      link: "/pdf/SCEECS'2026 Online List.pdf",
       label: "Virtual"
     },
     {
       mode: "SCEECS'26 Physical Schedule",
-      link: "/pdf/SCEECS'26 Offline List.pdf",
+      link: "/pdf/SCEECS'2026 Offline List.pdf",
       label: "Physical"
     }
   ];

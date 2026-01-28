@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const speakers = [
   {
-    title: "Striver",
+    title: "Love Babbar",
     step: "Expert Speaker",
     content: "Renowned expert in technology and innovation, bringing years of industry experience and cutting-edge insights to inspire the next generation of engineers and researchers.",
-    image: "/guest/striver.jpeg" // Placeholder - will be updated when image is provided
+    image: "/guest/final.webp" 
   },
   {
     title: "Sunchit Dudeja",
@@ -24,7 +24,7 @@ const speakers = [
     title: "Many More",
     step: "Distinguished Speakers",
     content: "Join us for an exciting lineup of distinguished speakers and industry leaders who will share their expertise and insights at SCEECS 2026.",
-    image: "/guest/final.webp"
+    image: "/guest/lakshya_kumar.jpeg"
   }
 ];
 
