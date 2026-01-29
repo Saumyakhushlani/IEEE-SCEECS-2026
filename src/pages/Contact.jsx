@@ -11,7 +11,7 @@ const teamMembers = [
   {
     name: "Ms Yashika Lawani",
     role: "Publication Co-chair",
-    image: "/contactTeam/Yashika.jpg",
+    image: "/contactTeam/Yashika.jpeg",
     linkedin: "https://www.linkedin.com/in/yashika-lawani"
   },
   {

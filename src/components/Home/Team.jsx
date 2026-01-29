@@ -22,7 +22,7 @@ const teamMembers = [
   {
     name: "Ms. Yashika Lawani",
     role: "Publication Co-Chair",
-    image: "/About_Images/Yashika.jpg",
+    image: "/About_Images/Yashika.jpeg",
     membershipNo: "101217691"
   },
   {
