@@ -16,7 +16,7 @@ import ScheduleSection from "../components/Home/ScheduleSection";
 function Home() {
   const button=[
     {text:"Visit IEEE-MSB", link :"https://ieeenitb.com/"},
-    {text:"Conference details", link :"https://sceecs.ieeenitb.com/docs/CALL%20FOR%20PAPER%201.png"},
+    {text:"Conference details", link :"/docs/CALL FOR PAPER 1.png"},
   ]
   return (
     <div>
